@@ -1,0 +1,55 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_LIB_PATH := $(LOCAL_PATH)/../../../src/main/cpp/util/libevent/lib
+
+#.a
+include $(CLEAR_VARS)
+LOCAL_MODULE := event
+LOCAL_SRC_FILES := $(LOCAL_LIB_PATH)/libevent.a
+LOCAL_MODULE_CLASS := STATIC_LIBRARIES
+LOCAL_MODULE_SUFFIX := .a
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := event_core
+LOCAL_SRC_FILES := $(LOCAL_LIB_PATH)/libevent_core.a
+LOCAL_MODULE_CLASS := STATIC_LIBRARIES
+LOCAL_MODULE_SUFFIX := .a
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := event_extra
+LOCAL_SRC_FILES := $(LOCAL_LIB_PATH)/libevent_extra.a
+LOCAL_MODULE_CLASS := STATIC_LIBRARIES
+LOCAL_MODULE_SUFFIX := .a
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := event_pthreads
+LOCAL_SRC_FILES := $(LOCAL_LIB_PATH)/libevent_pthreads.a
+LOCAL_MODULE_CLASS := STATIC_LIBRARIES
+LOCAL_MODULE_SUFFIX := .a
+include $(PREBUILT_STATIC_LIBRARY)
+
+#.so
+#include $(CLEAR_VARS)
+#LOCAL_MODULE := event
+#LOCAL_SRC_FILES := $(LOCAL_LIB_PATH)/libevent.so
+#include $(PREBUILT_SHARED_LIBRARY)
+
+#include $(CLEAR_VARS)
+#LOCAL_MODULE := event_core
+#LOCAL_SRC_FILES := $(LOCAL_LIB_PATH)/libevent_core.so
+#include $(PREBUILT_SHARED_LIBRARY)
+
+#include $(CLEAR_VARS)
+#LOCAL_MODULE := event_extra
+#LOCAL_SRC_FILES := $(LOCAL_LIB_PATH)/libevent_extra.so
+#include $(PREBUILT_SHARED_LIBRARY)
+
+#include $(CLEAR_VARS)
+#LOCAL_MODULE := event_pthreads
+#LOCAL_SRC_FILES := $(LOCAL_LIB_PATH)/libevent_pthreads.so
+#include $(PREBUILT_SHARED_LIBRARY)
